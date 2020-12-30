@@ -1,0 +1,8 @@
+save_date,name,guesses,letters_guessed,word,hidden_word,incorrect_guesses
+"2020-12-28 20:17:26 +0000,paul,8,aeiou,shogunate,__o_u_a_e,i"
+"2020-12-30 10:11:39 +0000,paul,8,traie,carrier,_arrier,t"
+"2020-12-30 10:13:04 +0000,dave,4,aiouegbn,legit,_egi_,aoubn"
+"2020-12-30 11:11:06 +0000,sue,8,aeiou,spurred,__u__e_,aio"
+"2020-12-30 11:32:22 +0000,mark,4,aeioustnr,unstylish,unst__is_,aeor"
+"2020-12-30 12:24:09 +0000,thea,3,aeioudtrmn,hostage,_o_ta_e,iudrmn"
+"2020-12-30 12:25:58 +0000,steve,8,aieo,taft,_a__,ieou"
