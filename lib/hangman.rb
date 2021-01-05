@@ -4,11 +4,11 @@ require "csv"
 class Game
   attr_accessor :guesses, :name, :letters_guessed, :word, :hidden_word, :incorrect_guesses, :save
     
-  def initialize(name, guesses, letters_guessed, word, hidden_word, incorrect_guesses)
+  def initialize(name)
     @name = name
     @guesses = guesses
-    @word = word
     @guesses = 12
+    @word = word
     @save = save
     @letters_guessed = letters_guessed
     @letters_guessed = Array.new
@@ -16,6 +16,29 @@ class Game
     @hidden_word = Array.new
     @incorrect_guesses = incorrect_guesses
     @incorrect_guesses = Array.new
+  end
+  
+  def new_game
+    $game = Game.new(@name)
+    $game.pick_word()
+    $game.hide_word()
+  end
+
+  def load_game
+    lGame = CSV.open "save_template.csv", headers: true, header_converters: :symbol
+    lGame.each do |row|
+      if @name == row[:name]
+        @guesses = row[:guesses].to_i
+        @letters_guessed = row[:letters_guessed].split('')
+        @word = row[:word].split('')
+        @hidden_word = row[:hidden_word].split('')
+        @incorrect_guesses = row[:incorrect_guesses].split('')
+        puts "Hi, #{@name} welcome back"
+        p @hidden_word
+        p @incorrect_guesses
+        p @guesses
+      end
+    end
   end
 
   def pick_word()
@@ -31,6 +54,13 @@ class Game
     x = @word.length
     x.times { @hidden_word << '_' }
     p @hidden_word
+  end
+
+  def save_game()
+    @guesses += 1
+    CSV.open("save_template.csv", "a") do |row| 
+    row << ["#{Time.new}","#{@name}","#{@guesses}","#{@letters_guessed.join('')}","#{@word.join('')}","#{@hidden_word.join('')}","#{@incorrect_guesses.join('')}"]
+    end
   end
 
   def guess()
@@ -76,45 +106,15 @@ end
 def new_game_or_load
   puts "What's your name friend?"
   @name = gets.chomp
+  $game = Game.new(@name)
+
   puts 'Do you want to load a game or start a new game? type "L" or "N"'
   l_or_s = gets.chomp.upcase
   if l_or_s == 'L'
-    load_game
+    $game.load_game
   elsif l_or_s == 'N'
-    new_game
+    $game.new_game
   else new_game_or_load
-  end
-end
-
-def new_game
-  $game = Game.new(@name, 12, @letters_guessed, @word, @hidden_word, @incorrect_guesses)
-  $game.pick_word()
-  $game.hide_word()
-end
-
-def load_game
-  puts @name
-  load = CSV.open "save_template.csv", headers: true, header_converters: :symbol
-  load.each do |row| 
-    if @name == row[:name] 
-      @guesses = row[:guesses]
-      @letters_guessed = row[:letters_guessed]
-      @word = row[:word]
-      @hidden_word = row[:hidden_word]
-      @incorrect_guesses = row[:incorrect_guesses]
-      $game = Game.new(@name, @guesses, @letters_guessed, @word, @hidden_word, @incorrect_guesses)
-    else puts 'No save data found for your name'
-      puts 'Starting new game'
-      new_game
-    end
-  end
-  
-end
-
-def save_game()
-  @guesses += 1
-  CSV.open("save_template.csv", "a") do |row| 
-  row << ["#{Time.new},#{@name},#{@guesses},#{@letters_guessed.join('')},#{@word.join('')},#{@hidden_word.join('')},#{@incorrect_guesses.join('')}"]
   end
 end
 

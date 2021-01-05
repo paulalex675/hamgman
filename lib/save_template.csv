@@ -1,8 +1,15 @@
-save_date,name,guesses,letters_guessed,word,hidden_word,incorrect_guesses
-"2020-12-28 20:17:26 +0000,paul,8,aeiou,shogunate,__o_u_a_e,i"
-"2020-12-30 10:11:39 +0000,paul,8,traie,carrier,_arrier,t"
-"2020-12-30 10:13:04 +0000,dave,4,aiouegbn,legit,_egi_,aoubn"
-"2020-12-30 11:11:06 +0000,sue,8,aeiou,spurred,__u__e_,aio"
-"2020-12-30 11:32:22 +0000,mark,4,aeioustnr,unstylish,unst__is_,aeor"
-"2020-12-30 12:24:09 +0000,thea,3,aeioudtrmn,hostage,_o_ta_e,iudrmn"
-"2020-12-30 12:25:58 +0000,steve,8,aieo,taft,_a__,ieou"
+ save_date,name,guesses,letters_guessed,word,hidden_word,incorrect_guesses
+2020-12-28 20:17:26 +0000,paul,8,aeiou,shogunate,__o_u_a_e,i
+2020-12-30 10:11:39 +0000,paul,8,traie,carrier,_arrier,t
+2020-12-30 10:13:04 +0000,dave,4,aiouegbn,legit,_egi_,aoubn
+2020-12-30 11:11:06 +0000,sue,8,aeiou,spurred,__u__e_,aio
+2020-12-30 11:32:22 +0000,mark,4,aeioustnr,unstylish,unst__is_,aeor
+2020-12-30 12:24:09 +0000,thea,3,aeioudtrmn,hostage,_o_ta_e,iudrmn
+2020-12-30 12:25:58 +0000,steve,8,aieo,taft,_a__,ieou
+2020-12-31 10:53:45 +0000,mike,5,aeioulnq,suited,_ui_e_,aolnq
+2021-01-02 22:54:01 +0000,marco,8,aeiou,pitcher,_i___e_,aou
+2021-01-03 13:25:17 +0000,dev,8,aeiou,impetus,i__e_u_,ao
+2021-01-03 21:48:16 +0000,stevo,2,aeioulrtsmz,vixen,_i_e_,aoulrtsmz
+2021-01-03 21:50:35 +0000,allan,5,aeiourtg,rougher,roug_er,ait
+2021-01-05 00:57:58 +0000,tig,4,aeioutrdc,retinae,reti_ae,oudc
+2021-01-05 09:48:05 +0000,jefferson,8,aeiou,leasehold,_ea_e_o__,iu
